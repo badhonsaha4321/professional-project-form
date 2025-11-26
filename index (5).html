@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Project Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🚀 Submit Your Project</h1>
+  <p>Fill the form & see live preview instantly!</p>
+
+  <div class="form-preview-wrapper">
+    <!-- Form -->
+    <form id="projectForm" novalidate>
+      <!-- Name -->
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required>
+      <div class="error" id="err-name"></div>
+
+      <!-- Email -->
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <div class="error" id="err-email"></div>
+
+      <!-- Phone -->
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="phone" placeholder="+8801XXXXXXXXX" required>
+      <div class="error" id="err-phone"></div>
+
+      <!-- Service -->
+      <label for="service">Service</label>
+      <select id="service" name="service">
+        <option value="web">Web Design</option>
+        <option value="frontend">Front-End Development</option>
+        <option value="seo">SEO & Content</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Budget -->
+      <label for="budget">Budget (BDT)</label>
+      <input type="range" id="budget" name="budget" min="1000" max="200000" step="500" value="15000">
+      <div id="budgetVal">15,000 BDT</div>
+
+      <!-- Project Details -->
+      <label for="details">Project Details *</label>
+      <textarea id="details" name="details" rows="5" maxlength="1500" placeholder="Describe your project in detail" required></textarea>
+      <div id="charcount">0 / 1500</div>
+      <div class="error" id="err-details"></div>
+
+      <!-- File Upload -->
+      <label for="file">Attach File (Optional)</label>
+      <input type="file" id="file" name="file" accept="image/*,.pdf">
+      <div id="fileName">No file chosen</div>
+
+      <!-- Terms Checkbox -->
+      <label class="checkbox-label">
+        <input type="checkbox" id="agree" required> I agree to terms & delivery schedule *
+      </label>
+      <div class="error" id="err-agree"></div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit" class="btn">Submit 🚀</button>
+        <button type="button" id="resetBtn" class="btn reset">Reset</button>
+      </div>
+    </form>
+
+    <!-- Live Preview Card -->
+    <div class="preview-card">
+      <h2>Live Preview</h2>
+      <div class="preview-content" id="previewContent">
+        <p><strong>Name:</strong> <span id="pName">---</span></p>
+        <p><strong>Email:</strong> <span id="pEmail">---</span></p>
+        <p><strong>Phone:</strong> <span id="pPhone">---</span></p>
+        <p><strong>Service:</strong> <span id="pService">---</span></p>
+        <p><strong>Budget:</strong> <span id="pBudget">15,000 BDT</span></p>
+        <p><strong>Details:</strong> <span id="pDetails">---</span></p>
+        <p><strong>File:</strong> <span id="pFile">No file chosen</span></p>
+      </div>
+      <button id="copyBtn" class="btn copy-btn">Copy Preview</button>
+      <div id="copyMsg" class="copy-msg">Copied to clipboard!</div>
+    </div>
+  </div>
+
+  <div id="toast">✅ Your request has been submitted successfully!</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
